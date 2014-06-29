@@ -1,0 +1,42 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Branding 1.0\n"
+"POT-Creation-Date: 2013-05-26 19:23+0530\n"
+"PO-Revision-Date: 2013-05-26 19:23+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: D:\\wamp\\www\\euphoria\\wp-content\\plugins\\woocommerce-"
+"branding\n"
+"X-Poedit-SearchPath-0: D:\\wamp\\www\\euphoria\\wp-content\\plugins"
+"\\woocommerce-branding\n"
+
+#: D:\wamp\www\euphoria\wp-content\plugins\woocommerce-branding/woocommerce-branding.php:100
+#: D:\wamp\www\euphoria\wp-content\plugins\woocommerce-branding/woocommerce-branding.php:101
+#: D:\wamp\www\euphoria\wp-content\plugins\woocommerce-branding/woocommerce-branding.php:163
+msgid "WC Branding"
+msgstr ""
+
+#: D:\wamp\www\euphoria\wp-content\plugins\woocommerce-branding/woocommerce-branding.php:140
+msgid "Replace WC Branding"
+msgstr ""
+
+#: D:\wamp\www\euphoria\wp-content\plugins\woocommerce-branding/woocommerce-branding.php:142
+msgid "Name"
+msgstr ""
+
+#: D:\wamp\www\euphoria\wp-content\plugins\woocommerce-branding/woocommerce-branding.php:144
+msgid "Icon URL"
+msgstr ""
+
+#: D:\wamp\www\euphoria\wp-content\plugins\woocommerce-branding/woocommerce-branding.php:170
+msgid "Save Changes"
+msgstr ""
+
+#: D:\wamp\www\euphoria\wp-content\plugins\woocommerce-branding/woocommerce-branding.php:199
+msgid "Icon should be 28px x 28px"
+msgstr ""
