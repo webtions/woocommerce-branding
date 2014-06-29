@@ -1,10 +1,10 @@
-=== WordPress for My Clients ===
+=== WooCommerce Branding ===
 Contributors: hchouhan, dreamsonline, dreamsmedia
 Donate link: http://www.dreamsonline.net
 Tags: woocommerce, branding, woocommerce menu, woocommerce icon
 Requires at least: 3.5
 Tested up to: 3.5.2
-Stable tag: 1.0
+Stable tag: 1.0.1
 Last Updated: 2013-May-26
 Plugin Name: WooCommerce Branding
 Plugin URI: http://www.dreamsonline.net/wordpress-plugins/woocommerce-branding/
