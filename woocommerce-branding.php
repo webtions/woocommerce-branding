@@ -1,36 +1,22 @@
 <?php
-/*
- * Plugin Name: WooCommerce Branding
- * Plugin URI: http://www.dreamsonline.net/wordpress-plugins/wordpress-for-my-clients/
- * Description: Helps customize WordPress for your clients by hiding non essential wp-admin components and by adding support for custom login logo and favicon for website and admin pages.
- * Version: 1.0.1
- * Author: Dreams Online Themes
- * Author URI: http://www.dreamsonline.net/wordpress-themes/
- * Author Email: hello@dreamsmedia.in
+/**
+ * Plugin Name:       WooCommerce Branding
+ * Plugin URI:        https://themeist.com/plugins/wordpress/woocommerce-branding/#utm_source=wp-plugin&utm_medium=woocommerce-branding&utm_campaign=plugins-page
+ * Description:       Helps customise WordPress for your clients by hiding non-essential wp-admin components and adding support for a custom login logo and favicon for both frontend and backend.
+ * Version:           1.0.1
+ * Requires at least: 6.0
+ * Tested up to:      6.8
+ * Requires PHP:      7.4
+ * Author:            Themeist
+ * Author URI:        https://themeist.com/
+ * License:           GPL-3.0-or-later
+ * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
+ * Text Domain:       woocommerce-branding
  *
- * @package WordPress
- * @subpackage DOT_WooCommerce_Branding
- * @author Harish
- * @since 1.0
- *
- * License:
-
-	Copyright 2013 "WooCommerce Branding WordPress Plugin" (hello@dreamsmedia.in)
-
-	This program is free software; you can redistribute it and/or modify
-	it under the terms of the GNU General Public License, version 2, as
-	published by the Free Software Foundation.
-
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
-
-	You should have received a copy of the GNU General Public License
-	along with this program; if not, write to the Free Software
-	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ * @package Themeist_WooCommerceBranding
 
  */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
