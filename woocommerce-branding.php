@@ -20,9 +20,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'DOT_WooCommerce_Branding' ) ) {
+if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 
-	class DOT_WooCommerce_Branding {
+	class Themeist_WooCommerce_Branding {
 
 		/**
 		 * Initializes the plugin by setting localization, filters, and administration functions.
@@ -233,5 +233,5 @@ if ( ! class_exists( 'DOT_WooCommerce_Branding' ) ) {
 	} // End class
 
 	// Initiation call of plugin
-	$dot_woocommerce_branding = new DOT_WooCommerce_Branding( __FILE__ );
+	new Themeist_WooCommerce_Branding( __FILE__ );
 }
