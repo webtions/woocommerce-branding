@@ -71,7 +71,7 @@ if ( ! class_exists( 'DOT_WooCommerce_Branding' ) ) {
 					'dot_wcb_admin',
 					plugins_url( 'js/dot_wcb_admin.js', __FILE__ ),
 					array( 'thickbox', 'media-upload' ),
-					null,
+					filemtime( plugin_dir_path( __FILE__ ) . 'js/dot_wcb_admin.js' ),
 					true
 				);
 				wp_enqueue_script( 'dot_wcb_admin' );
