@@ -28,7 +28,6 @@ if ( ! class_exists( 'DOT_WooCommerce_Branding' ) ) {
 		 * Initializes the plugin by setting localization, filters, and administration functions.
 		 */
 		function __construct() {
-			add_action( 'init', array( $this, 'load_localisation' ), 0 );
 			add_action( 'admin_menu', array( $this, 'dot_wcb_menu' ) );
 			add_action( 'admin_enqueue_scripts', array( $this, 'dot_wcb_assets' ) );
 			add_action( 'admin_init', array( $this, 'dot_wcb_settings' ) );
@@ -38,13 +37,6 @@ if ( ! class_exists( 'DOT_WooCommerce_Branding' ) ) {
 				add_filter( 'ngettext', array( $this, 'dot_wcb_woocommerce_menu_title' ) );
 				add_action( 'admin_head', array( $this, 'dot_wcb_woocommerce_icon' ) );
 			}
-		}
-
-		/**
-		 * Load plugin localisation.
-		 */
-		public function load_localisation() {
-			load_plugin_textdomain( 'dot_wcb', false, basename( __DIR__ ) . '/languages' );
 		}
 
 		/**
@@ -58,8 +50,8 @@ if ( ! class_exists( 'DOT_WooCommerce_Branding' ) ) {
 		 * Register the admin settings page.
 		 */
 		function dot_wcb_menu() {
-			$page_title = __( 'WC Branding', 'dot_wpfmc' );
-			$menu_title = __( 'WC Branding', 'dot_wpfmc' );
+			$page_title = __( 'WC Branding', 'woocommerce-branding' );
+			$menu_title = __( 'WC Branding', 'woocommerce-branding' );
 			$capability = 'manage_options';
 			$menu_slug  = 'dot_wcb';
 			$function   = array( $this, 'dot_wcb_menu_contents' );
@@ -95,14 +87,14 @@ if ( ! class_exists( 'DOT_WooCommerce_Branding' ) ) {
 			if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 				add_settings_section(
 					'woocommerce_branding',
-					__( 'Replace WC Branding', 'dot_wcb' ),
+					__( 'Replace WC Branding', 'woocommerce-branding' ),
 					array( $this, 'section_woocommerce_branding' ),
 					'dot_wcb_settings'
 				);
 
 				add_settings_field(
 					'woocommerce_branding_name',
-					__( 'Name', 'dot_wcb' ),
+					__( 'Name', 'woocommerce-branding' ),
 					array( $this, 'section_woocommerce_branding_name' ),
 					'dot_wcb_settings',
 					'woocommerce_branding'
@@ -110,7 +102,7 @@ if ( ! class_exists( 'DOT_WooCommerce_Branding' ) ) {
 
 				add_settings_field(
 					'woocommerce_branding_icon',
-					__( 'Icon URL', 'dot_wcb' ),
+					__( 'Icon URL', 'woocommerce-branding' ),
 					array( $this, 'section_woocommerce_branding_icon' ),
 					'dot_wcb_settings',
 					'woocommerce_branding'
@@ -125,7 +117,7 @@ if ( ! class_exists( 'DOT_WooCommerce_Branding' ) ) {
 			?>
 			<div class="wrap">
 				<div id="icon-options-general" class="icon32"><br></div>
-				<h2><?php _e( 'WC Branding', 'dot_wcb' ); ?></h2>
+				<h2><?php _e( 'WC Branding', 'woocommerce-branding' ); ?></h2>
 
 				<form method="post" action="options.php">
 					<?php
@@ -133,7 +125,7 @@ if ( ! class_exists( 'DOT_WooCommerce_Branding' ) ) {
 					do_settings_sections( 'dot_wcb_settings' );
 					?>
 					<p class="submit">
-						<input name="Submit" type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'dot_wcb' ); ?>" />
+						<input name="Submit" type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'woocommerce-branding' ); ?>" />
 					</p>
 				</form>
 			</div>
@@ -185,9 +177,9 @@ if ( ! class_exists( 'DOT_WooCommerce_Branding' ) ) {
 					name="dot_wcb_settings[woocommerce_branding_icon]"
 					value="<?php echo $icon_url; ?>"
 				/>
-				<input type="button" class="button button-upload" value="<?php esc_attr_e( 'Upload an Icon', 'dot_wcb' ); ?>" /><br>
+				<input type="button" class="button button-upload" value="<?php esc_attr_e( 'Upload an Icon', 'woocommerce-branding' ); ?>" /><br>
 				<img style="max-width: 300px; display: block;" src="<?php echo $icon_url; ?>" class="preview-upload" /><br>
-				<?php _e( 'Icon should be 28px x 28px', 'dot_wcb' ); ?>
+				<?php _e( 'Icon should be 28px x 28px', 'woocommerce-branding' ); ?>
 			</span>
 			<?php
 		}
