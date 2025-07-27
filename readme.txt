@@ -1,17 +1,13 @@
-=== WooCommerce Branding ===
-Contributors: hchouhan, dreamsonline, dreamsmedia
-Donate link: http://www.dreamsonline.net
+===  Custom Branding for WooCommerce ===
+Contributors: themeist, hchouhan
+Donate link: https://themeist.com/plugins/wordpress/woocommerce-branding/
 Tags: woocommerce, branding, woocommerce menu, woocommerce icon
-Requires at least: 3.5
-Tested up to: 3.5.2
-Stable tag: 1.0.1
-Last Updated: 2013-May-26
-Plugin Name: WooCommerce Branding
-Plugin URI: http://www.dreamsonline.net/wordpress-plugins/woocommerce-branding/
-Author: Harish Chouhan
-Author URI: http://www.dreamsonline.net/wordpress-themes/
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Requires at least: 6.0
+Tested up to: 6.8
+Requires PHP: 7.4
+Stable tag: 1.1.0
+License: GPL-3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
 
 Replace WooCommerce branding with your own logo and name
