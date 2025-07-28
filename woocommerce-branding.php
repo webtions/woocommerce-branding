@@ -22,6 +22,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 
+	/**
+	 * Main plugin class to apply custom branding to WooCommerce.
+	 */
 	class Themeist_WooCommerce_Branding {
 
 		/**
@@ -40,16 +43,20 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 		}
 
 		/**
-		 * Defines constants for the plugin.
+		 * Define plugin directory constant.
+		 *
+		 * @return void
 		 */
-		function constants() {
+		private function constants() {
 			define( 'DOT_WCB_DIR', trailingslashit( plugin_dir_path( __FILE__ ) ) );
 		}
 
 		/**
-		 * Register the admin settings page.
+		 * Add the WC Branding options page to the admin menu.
+		 *
+		 * @return void
 		 */
-		function dot_wcb_menu() {
+		public function dot_wcb_menu() {
 			$page_title = __( 'WC Branding', 'woocommerce-branding' );
 			$menu_title = __( 'WC Branding', 'woocommerce-branding' );
 			$capability = 'manage_options';
@@ -59,9 +66,13 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 		}
 
 		/**
-		 * Load admin assets on settings page.
+		 * Enqueue scripts and styles for the settings page.
+		 *
+		 * Loads media uploader and custom JS only when on the WC Branding settings page.
+		 *
+		 * @return void
 		 */
-		function dot_wcb_assets() {
+		public function dot_wcb_assets() {
 			if ( isset( $_GET['page'] ) && $_GET['page'] === 'dot_wcb' ) {
 				wp_enqueue_media();
 				wp_enqueue_script(
@@ -75,7 +86,11 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 		}
 
 		/**
-		 * Register plugin settings and fields.
+		 * Register plugin settings, sections, and fields.
+		 *
+		 * Adds WooCommerce branding options to the settings API if WooCommerce is active.
+		 *
+		 * @return void
 		 */
 		public function dot_wcb_settings() {
 			register_setting( 'dot_wcb_settings', 'dot_wcb_settings', array( $this, 'settings_validate' ) );
@@ -107,7 +122,11 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 		}
 
 		/**
-		 * Output the settings page contents.
+		 * Outputs the HTML for the plugin settings page.
+		 *
+		 * Displays the form for updating WooCommerce branding settings.
+		 *
+		 * @return void
 		 */
 		public function dot_wcb_menu_contents() {
 			?>
@@ -129,14 +148,20 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 		}
 
 		/**
-		 * Outputs the section description (currently empty).
+		 * Outputs the description for the WooCommerce branding section.
+		 *
+		 * Currently left blank as no description is needed.
+		 *
+		 * @return void
 		 */
 		function section_woocommerce_branding() {
 			// Intentionally left blank.
 		}
 
 		/**
-		 * Outputs the input field for the WooCommerce branding name setting.
+		 * Outputs the input field for customizing the WooCommerce branding name.
+		 *
+		 * @return void
 		 */
 		function section_woocommerce_branding_name() {
 			$options = get_option( 'dot_wcb_settings' );
@@ -156,7 +181,9 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 		}
 
 		/**
-		 * Outputs the input field for the WooCommerce branding icon URL setting.
+		 * Outputs the input field and media uploader for customizing the WooCommerce branding icon URL.
+		 *
+		 * @return void
 		 */
 		function section_woocommerce_branding_icon() {
 			$options = get_option( 'dot_wcb_settings' );
@@ -181,20 +208,20 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 		}
 
 		/**
-		 * Validate and sanitize plugin settings before saving.
+		 * Validates and sanitizes plugin settings before saving.
 		 *
-		 * @param array $input Settings array.
-		 * @return array Sanitized settings.
+		 * @param array $input The submitted settings array.
+		 * @return array Sanitized settings array.
 		 */
 		function settings_validate( $input ) {
 			return $input;
 		}
 
 		/**
-		 * Replaces the WooCommerce menu label with the custom branding name.
+		 * Filters the WooCommerce menu label in admin with the custom branding name.
 		 *
-		 * @param string $translated The translated string.
-		 * @return string Modified menu title if branding name is set, original otherwise.
+		 * @param string $translated The translated text.
+		 * @return string Modified menu title if branding name is set; original otherwise.
 		 */
 		function dot_wcb_woocommerce_menu_title( $translated ) {
 			$options = get_option( 'dot_wcb_settings' );
@@ -206,7 +233,8 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 		}
 
 		/**
-		 * Injects custom CSS to replace the WooCommerce admin menu icon with a custom branding icon.
+		 * Adds custom CSS to replace the default WooCommerce admin menu icon
+		 * with a custom branding icon defined in plugin settings.
 		 */
 		function dot_wcb_woocommerce_icon() {
 			$options = get_option( 'dot_wcb_settings' );
@@ -228,6 +256,8 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 		}
 	} // End class
 
-	// Initiation call of plugin
+	/**
+	 * Initializes the plugin by creating an instance of the main class.
+	 */
 	new Themeist_WooCommerce_Branding( __FILE__ );
 }
