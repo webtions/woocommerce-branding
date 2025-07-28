@@ -73,7 +73,8 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 		 * @return void
 		 */
 		public function dot_wcb_assets() {
-			if ( 'dot_wcb' === ( $_GET['page'] ?? '' ) ) {
+			$page = isset( $_GET['page'] ) ? sanitize_text_field( wp_unslash( $_GET['page'] ) ) : '';
+			if ( 'dot_wcb' === $page ) {
 				wp_enqueue_media();
 				wp_enqueue_script(
 					'woocommerce-branding-settings',
