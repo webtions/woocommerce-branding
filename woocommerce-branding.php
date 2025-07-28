@@ -73,7 +73,7 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 		 * @return void
 		 */
 		public function dot_wcb_assets() {
-			if ( isset( $_GET['page'] ) && $_GET['page'] === 'dot_wcb' ) {
+			if ( 'dot_wcb' === ( $_GET['page'] ?? '' ) ) {
 				wp_enqueue_media();
 				wp_enqueue_script(
 					'woocommerce-branding-settings',
@@ -229,7 +229,7 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 				$options = array();
 			}
 			$branding_name = sanitize_text_field( $options['woocommerce_branding_name'] ?? '' );
-			return $branding_name !== '' ? str_replace( 'WooCommerce', $branding_name, $translated ) : $translated;
+			return '' !== $branding_name ? str_replace( 'WooCommerce', $branding_name, $translated ) : $translated;
 		}
 
 		/**
@@ -242,7 +242,7 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 				return;
 			}
 			$icon_url = esc_url( $options['woocommerce_branding_icon'] ?? '' );
-			if ( $icon_url !== '' ) {
+			if ( '' !== $icon_url ) {
 				?>
 				<style type="text/css">
 					#adminmenu #toplevel_page_woocommerce div.wp-menu-image {
