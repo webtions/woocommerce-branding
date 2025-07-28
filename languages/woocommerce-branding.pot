@@ -1,0 +1,70 @@
+# Copyright (C) 2025 Themeist
+# This file is distributed under the GPL-3.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Custom Branding for WooCommerce 1.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woocommerce-branding\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-07-28T01:33:39+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: woocommerce-branding\n"
+
+#. Plugin Name of the plugin
+#: woocommerce-branding.php
+msgid "Custom Branding for WooCommerce"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: woocommerce-branding.php
+msgid "https://themeist.com/plugins/wordpress/woocommerce-branding/#utm_source=wp-plugin&utm_medium=woocommerce-branding&utm_campaign=plugins-page"
+msgstr ""
+
+#. Description of the plugin
+#: woocommerce-branding.php
+msgid "Helps customise WordPress for your clients by hiding non-essential wp-admin components and adding support for a custom login logo and favicon for both frontend and backend."
+msgstr ""
+
+#. Author of the plugin
+#: woocommerce-branding.php
+msgid "Themeist"
+msgstr ""
+
+#. Author URI of the plugin
+#: woocommerce-branding.php
+msgid "https://themeist.com/"
+msgstr ""
+
+#: woocommerce-branding.php:60
+#: woocommerce-branding.php:61
+#: woocommerce-branding.php:136
+msgid "WC Branding"
+msgstr ""
+
+#: woocommerce-branding.php:102
+msgid "Replace WC Branding"
+msgstr ""
+
+#: woocommerce-branding.php:109
+msgid "Name"
+msgstr ""
+
+#: woocommerce-branding.php:117
+msgid "Icon URL"
+msgstr ""
+
+#: woocommerce-branding.php:144
+msgid "Save Changes"
+msgstr ""
+
+#: woocommerce-branding.php:200
+msgid "Upload an Icon"
+msgstr ""
+
+#: woocommerce-branding.php:202
+msgid "Recommended size: 20px x 20px"
+msgstr ""
