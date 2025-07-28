@@ -1,17 +1,13 @@
-=== WooCommerce Branding ===
-Contributors: hchouhan, dreamsonline, dreamsmedia
-Donate link: http://www.dreamsonline.net
+===  Custom Branding for WooCommerce ===
+Contributors: themeist, hchouhan
+Donate link: https://themeist.com/plugins/wordpress/woocommerce-branding/
 Tags: woocommerce, branding, woocommerce menu, woocommerce icon
-Requires at least: 3.5
-Tested up to: 3.5.2
-Stable tag: 1.0.1
-Last Updated: 2013-May-26
-Plugin Name: WooCommerce Branding
-Plugin URI: http://www.dreamsonline.net/wordpress-plugins/woocommerce-branding/
-Author: Harish Chouhan
-Author URI: http://www.dreamsonline.net/wordpress-themes/
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Requires at least: 6.0
+Tested up to: 6.8
+Requires PHP: 7.4
+Stable tag: 1.1.0
+License: GPL-3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
 
 Replace WooCommerce branding with your own logo and name
@@ -19,42 +15,41 @@ Replace WooCommerce branding with your own logo and name
 
 == Description ==
 
-This plugin allows a quick way to rebrand WooCommerce with your custom name and menu icon.
+This plugin allows you to quickly rebrand WooCommerce in the WordPress admin area by replacing the default WooCommerce name and menu icon with your own.
 
+It's perfect for developers who build client sites and want to customise the admin experience.
 
-Please report any bugs you find via http://www.dreamsonline.net/wordpress-plugins/woocommerce-branding/
-
-
-= Known Bugs =
-
-* Avoid adding space in the name you add to replace "WooCommerce"
-
-= My Links =
-
-* Twitter @[harishchouhan](https://twitter.com/dreams_media)
-* Google+ [Harish Chouhan](https://plus.google.com/u/0/103138475844539274387/)
-
-
-If you love the plugin, please consider rating it and clicking on "it works" button.
-
+If you find this plugin useful, please consider [leaving a review](https://wordpress.org/support/plugin/woocommerce-branding/reviews/?rate=5#new-post). It helps others discover the plugin and supports continued development.
 
 == Installation ==
 
-1. Upload the directory `/woocommerce-branding/` to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Click the "WC Branding" link under the Settings menu to change WooCommerce branding.
-
+1. In your WordPress dashboard, go to **Plugins → Add New**.
+2. Search for **Custom Branding for WooCommerce**.
+3. Click **Install Now** and then **Activate**.
+4. Go to **Settings → WC Branding** to customise the branding.
 
 
 == Frequently Asked Questions ==
 
-Take a look at the [official "WordPress for my Clients" FAQ](http://www.dreamsonline.net/wordpress-plugins/woocommerce-branding/).
+= Where can I ask for support? =
 
-You can also visit the [support center](http://www.dreamsonline.net/wordpress-plugins/woocommerce-branding/) and start a discussion if needed.
+You can use the [support forum on WordPress.org](https://wordpress.org/support/plugin/woocommerce-branding/) to report bugs or ask questions.
 
 
 
 == Changelog ==
 
-= 1.0.0
-* This is the first version
+= 1.1.0 - (28 July 2025) =
+* Removed `wp_enqueue_media()` and custom JavaScript for cleaner settings page
+* Added visibility declarations to all class methods
+* Escaped all translatable and dynamic output using `esc_html__()`, `esc_attr()`, and `esc_url()`
+* Used strict comparison (`true`) in `in_array()` checks
+* Sanitized and unslashed `$_GET['page']` in settings asset loader
+* Added full docblocks to all public methods for better developer clarity
+* Cleaned up code formatting and ensured PHPCS compliance
+
+= 1.0.1 =
+* Minor internal code improvements and documentation updates
+
+= 1.0.0 =
+* Initial release
