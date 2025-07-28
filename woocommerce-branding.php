@@ -63,18 +63,14 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 		 */
 		function dot_wcb_assets() {
 			if ( isset( $_GET['page'] ) && $_GET['page'] === 'dot_wcb' ) {
-				wp_enqueue_style( 'thickbox' );
-				wp_enqueue_script( 'thickbox' );
-				wp_enqueue_script( 'media-upload' );
-
-				wp_register_script(
-					'dot_wcb_admin',
-					plugins_url( 'js/dot_wcb_admin.js', __FILE__ ),
-					array( 'thickbox', 'media-upload' ),
-					filemtime( plugin_dir_path( __FILE__ ) . 'js/dot_wcb_admin.js' ),
+				wp_enqueue_media();
+				wp_enqueue_script(
+					'woocommerce-branding-settings',
+					plugins_url( 'js/woocommerce-branding-settings.js', __FILE__ ),
+					array( 'jquery' ),
+					filemtime( plugin_dir_path( __FILE__ ) . 'js/woocommerce-branding-settings.js' ),
 					true
 				);
-				wp_enqueue_script( 'dot_wcb_admin' );
 			}
 		}
 
