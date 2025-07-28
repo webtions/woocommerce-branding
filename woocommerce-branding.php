@@ -199,7 +199,7 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 				/>
 				<input type="button" class="button button-upload" value="<?php esc_attr_e( 'Upload an Icon', 'woocommerce-branding' ); ?>" /><br>
 				<img style="max-width: 300px; display: block;" src="<?php echo esc_url( $icon_url ); ?>" class="preview-upload" /><br>
-				<?php esc_html_e( 'Icon should be 28px x 28px', 'woocommerce-branding' ); ?>
+				<?php esc_html_e( 'Recommended size: 20px x 20px', 'woocommerce-branding' ); ?>
 			</span>
 			<?php
 		}
@@ -239,10 +239,17 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 			if ( '' !== $icon_url ) {
 				?>
 				<style type="text/css">
-					#adminmenu #toplevel_page_woocommerce div.wp-menu-image {
-						background-image: url('<?php echo esc_url( $icon_url ); ?>');
-						background-size: auto;
-						background-position: 0 0;
+					#adminmenu #toplevel_page_woocommerce .wp-menu-image svg,
+					#adminmenu #toplevel_page_woocommerce .wp-menu-image:before {
+						display: none !important;
+					}
+					#adminmenu #toplevel_page_woocommerce .wp-menu-image {
+						background-image: url('<?php echo esc_url( $icon_url ); ?>') !important;
+						background-size: 20px 20px !important;
+						background-repeat: no-repeat !important;
+						background-position: center center !important;
+						width: 36px !important;
+						height: 34px !important;
 					}
 				</style>
 				<?php
