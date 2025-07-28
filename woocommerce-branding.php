@@ -30,12 +30,12 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 		/**
 		 * Initializes the plugin by setting localization, filters, and administration functions.
 		 */
-		function __construct() {
+		public function __construct() {
 			add_action( 'admin_menu', array( $this, 'dot_wcb_menu' ) );
 			add_action( 'admin_enqueue_scripts', array( $this, 'dot_wcb_assets' ) );
 			add_action( 'admin_init', array( $this, 'dot_wcb_settings' ) );
 
-			if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+			if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ), true ) ) {
 				add_filter( 'gettext', array( $this, 'dot_wcb_woocommerce_menu_title' ) );
 				add_filter( 'ngettext', array( $this, 'dot_wcb_woocommerce_menu_title' ) );
 				add_action( 'admin_head', array( $this, 'dot_wcb_woocommerce_icon' ) );
@@ -95,7 +95,7 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 		public function dot_wcb_settings() {
 			register_setting( 'dot_wcb_settings', 'dot_wcb_settings', array( $this, 'settings_validate' ) );
 
-			if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+			if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ), true ) ) {
 				add_settings_section(
 					'woocommerce_branding',
 					__( 'Replace WC Branding', 'woocommerce-branding' ),
@@ -132,7 +132,7 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 			?>
 			<div class="wrap">
 				<div id="icon-options-general" class="icon32"><br></div>
-				<h2><?php _e( 'WC Branding', 'woocommerce-branding' ); ?></h2>
+				<h2><?php esc_html_e( 'WC Branding', 'woocommerce-branding' ); ?></h2>
 
 				<form method="post" action="options.php">
 					<?php
@@ -140,7 +140,7 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 					do_settings_sections( 'dot_wcb_settings' );
 					?>
 					<p class="submit">
-						<input name="Submit" type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'woocommerce-branding' ); ?>" />
+						<input name="Submit" type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'woocommerce-branding' ); ?>" />
 					</p>
 				</form>
 			</div>
@@ -154,7 +154,7 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 		 *
 		 * @return void
 		 */
-		function section_woocommerce_branding() {
+		public function section_woocommerce_branding() {
 			// Intentionally left blank.
 		}
 
@@ -163,11 +163,9 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 		 *
 		 * @return void
 		 */
-		function section_woocommerce_branding_name() {
-			$options = get_option( 'dot_wcb_settings' );
-			if ( ! is_array( $options ) ) {
-				$options = array();
-			}
+		public function section_woocommerce_branding_name() {
+			$options       = get_option( 'dot_wcb_settings' );
+			$options       = is_array( $options ) ? $options : array();
 			$branding_name = sanitize_text_field( $options['woocommerce_branding_name'] ?? '' );
 			?>
 			<input
@@ -185,11 +183,9 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 		 *
 		 * @return void
 		 */
-		function section_woocommerce_branding_icon() {
-			$options = get_option( 'dot_wcb_settings' );
-			if ( ! is_array( $options ) ) {
-				$options = array();
-			}
+		public function section_woocommerce_branding_icon() {
+			$options  = get_option( 'dot_wcb_settings' );
+			$options  = is_array( $options ) ? $options : array();
 			$icon_url = esc_url( $options['woocommerce_branding_icon'] ?? '' );
 			?>
 			<span class="upload">
@@ -198,11 +194,11 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 					id="dot_wcb_settings[woocommerce_branding_icon]"
 					class="regular-text text-upload"
 					name="dot_wcb_settings[woocommerce_branding_icon]"
-					value="<?php echo $icon_url; ?>"
+					value="<?php echo esc_attr( $icon_url ); ?>"
 				/>
 				<input type="button" class="button button-upload" value="<?php esc_attr_e( 'Upload an Icon', 'woocommerce-branding' ); ?>" /><br>
-				<img style="max-width: 300px; display: block;" src="<?php echo $icon_url; ?>" class="preview-upload" /><br>
-				<?php _e( 'Icon should be 28px x 28px', 'woocommerce-branding' ); ?>
+				<img style="max-width: 300px; display: block;" src="<?php echo esc_url( $icon_url ); ?>" class="preview-upload" /><br>
+				<?php esc_html_e( 'Icon should be 28px x 28px', 'woocommerce-branding' ); ?>
 			</span>
 			<?php
 		}
@@ -213,7 +209,7 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 		 * @param array $input The submitted settings array.
 		 * @return array Sanitized settings array.
 		 */
-		function settings_validate( $input ) {
+		public function settings_validate( $input ) {
 			return $input;
 		}
 
@@ -223,11 +219,9 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 		 * @param string $translated The translated text.
 		 * @return string Modified menu title if branding name is set; original otherwise.
 		 */
-		function dot_wcb_woocommerce_menu_title( $translated ) {
-			$options = get_option( 'dot_wcb_settings' );
-			if ( ! is_array( $options ) ) {
-				$options = array();
-			}
+		public function dot_wcb_woocommerce_menu_title( $translated ) {
+			$options       = get_option( 'dot_wcb_settings' );
+			$options       = is_array( $options ) ? $options : array();
 			$branding_name = sanitize_text_field( $options['woocommerce_branding_name'] ?? '' );
 			return '' !== $branding_name ? str_replace( 'WooCommerce', $branding_name, $translated ) : $translated;
 		}
@@ -236,17 +230,16 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 		 * Adds custom CSS to replace the default WooCommerce admin menu icon
 		 * with a custom branding icon defined in plugin settings.
 		 */
-		function dot_wcb_woocommerce_icon() {
-			$options = get_option( 'dot_wcb_settings' );
-			if ( ! is_array( $options ) ) {
-				return;
-			}
+		public function dot_wcb_woocommerce_icon() {
+			$options  = get_option( 'dot_wcb_settings' );
+			$options  = is_array( $options ) ? $options : array();
 			$icon_url = esc_url( $options['woocommerce_branding_icon'] ?? '' );
+
 			if ( '' !== $icon_url ) {
 				?>
 				<style type="text/css">
 					#adminmenu #toplevel_page_woocommerce div.wp-menu-image {
-						background-image: url('<?php echo $icon_url; ?>');
+						background-image: url('<?php echo esc_url( $icon_url ); ?>');
 						background-size: auto;
 						background-position: 0 0;
 					}
@@ -254,10 +247,10 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 				<?php
 			}
 		}
-	} // End class
+	}
 
 	/**
 	 * Initializes the plugin by creating an instance of the main class.
 	 */
-	new Themeist_WooCommerce_Branding( __FILE__ );
+	new Themeist_WooCommerce_Branding();
 }
