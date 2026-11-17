@@ -43,15 +43,6 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 		}
 
 		/**
-		 * Define plugin directory constant.
-		 *
-		 * @return void
-		 */
-		private function constants() {
-			define( 'DOT_WCB_DIR', trailingslashit( plugin_dir_path( __FILE__ ) ) );
-		}
-
-		/**
 		 * Add the WC Branding options page to the admin menu.
 		 *
 		 * @return void
@@ -73,6 +64,7 @@ if ( ! class_exists( 'Themeist_WooCommerce_Branding' ) ) {
 		 * @return void
 		 */
 		public function dot_wcb_assets() {
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Only reads the admin page slug.
 			$page = isset( $_GET['page'] ) ? sanitize_text_field( wp_unslash( $_GET['page'] ) ) : '';
 			if ( 'dot_wcb' === $page ) {
 				wp_enqueue_media();
