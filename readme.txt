@@ -3,8 +3,8 @@ Contributors: themeist, hchouhan
 Donate link: https://themeist.com/plugins/wordpress/woocommerce-branding/
 Tags: woocommerce, branding, woocommerce menu, woocommerce icon
 Requires at least: 6.0
-Tested up to: 6.8
-Requires PHP: 7.4
+Tested up to: 7.1
+Requires PHP: 8.2
 Stable tag: 1.1.0
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
