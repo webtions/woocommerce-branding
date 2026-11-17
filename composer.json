@@ -1,9 +1,9 @@
 {
-	"name": "webtions/plugin-info",
+	"name": "webtions/woocommerce-branding",
 	"type": "wordpress-plugin",
-	"description": "Developer-focused plugin to fetch and display information from the WordPress.org Plugin API.",
-	"keywords": ["WordPress", "plugin", "API", "plugin info"],
-	"homepage": "https://github.com/themeist/plugin-info",
+	"description": "Replace the WooCommerce admin menu name and icon with your own.",
+	"keywords": ["WordPress", "plugin", "WooCommerce", "branding"],
+	"homepage": "https://github.com/webtions/woocommerce-branding",
 	"license": "GPL-3.0-or-later",
 	"require": {
 		"php": ">=7.4"
