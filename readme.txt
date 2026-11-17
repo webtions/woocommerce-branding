@@ -5,7 +5,7 @@ Tags: woocommerce, branding, woocommerce menu, woocommerce icon
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -38,6 +38,11 @@ You can use the [support forum on WordPress.org](https://wordpress.org/support/p
 
 
 == Changelog ==
+
+= 1.1.1 - (17 November 2026) =
+* Changed: Minimum PHP version is now 8.2
+* Tested up to WordPress 7.1
+* Removed: Unused internal method
 
 = 1.1.0 - (28 July 2025) =
 * Removed `wp_enqueue_media()` and custom JavaScript for cleaner settings page

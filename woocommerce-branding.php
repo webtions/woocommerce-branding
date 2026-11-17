@@ -3,10 +3,10 @@
  * Plugin Name:       Custom Branding for WooCommerce
  * Plugin URI:        https://themeist.com/plugins/wordpress/woocommerce-branding/#utm_source=wp-plugin&utm_medium=woocommerce-branding&utm_campaign=plugins-page
  * Description:       Helps customise WordPress for your clients by hiding non-essential wp-admin components and adding support for a custom login logo and favicon for both frontend and backend.
- * Version:           1.1.0
+ * Version:           1.1.1
  * Requires at least: 6.0
- * Tested up to:      6.8
- * Requires PHP:      7.4
+ * Tested up to:      7.1
+ * Requires PHP:      8.2
  * Author:            Themeist
  * Author URI:        https://themeist.com/
  * License:           GPL-3.0-or-later
